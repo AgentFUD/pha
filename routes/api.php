@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PlayersController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +22,11 @@ Route::post('login', [LoginController::class, 'login']);
 Route::group(['middleware' => 'auth:sanctum'], function(){
     Route::get('/user', function (Request $request) {
         return $request->user();
+    });
+    Route::prefix('player')->controller(PlayersController::class)->group(function () {
+        Route::get('/{id}', 'show');
+        Route::post('/', 'store');
+        Route::put('/{id}', 'update');
+        Route::delete('/{id}', 'destroy');
     });
 });
