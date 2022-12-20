@@ -26,28 +26,23 @@ bash$ docker exec -it app php /usr/bin/composer install
 bash$ docker exec -it app php /var/www/artisan key:generate   
 ```
 
-6. Now you can run migrations
-```
-bash$     
-```
-
-7. Now you can run tests as well
+6. Now you can run tests as well
 ```
 bash$ docker exec -it app php /var/www/artisan test   
 ```
 
-8. Fix some permission issues
+7. Fix some permission issues
 ```
 bash$ docker exec -it app bash
 root@1724f029db3f:/var/www# chmod -R 777 storage/
 ```
 
-9. Migrate
+8. Migrate
 ```
 bash$ docker exec -it app php /var/www/artisan migrate
 ```
 
-10. Seed two users
+9. Seed two users
 ```
 bash$ docker exec -it app php /var/www/artisan db:seed
 ```
@@ -60,7 +55,8 @@ Symfony 5.x or Laravel 8.x | Y
 Docker and docker-compose | Y
 Mysql >= 5.7 | Y
 Git | Y
-API Authentication | 
+API Authentication - Login | Y
+API Authorization - Sanctum | Y
 Player manager Create |
 Player manager Get |
 Player manager Update |
