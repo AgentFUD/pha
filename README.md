@@ -51,3 +51,29 @@ bash$ docker exec -it app php /var/www/artisan migrate
 ```
 bash$ docker exec -it app php /var/www/artisan db:seed
 ```
+
+## Checklist
+TODO | DONE
+--- | ---
+Php >= 7.4 | Y
+Symfony 5.x or Laravel 8.x | Y
+Docker and docker-compose | Y
+Mysql >= 5.7 | Y
+Git | Y
+API Authentication | 
+Player manager Create |
+Player manager Get |
+Player manager Update |
+Player manager Delete |
+Upload file - Validate |
+Upload file - Parse into database |
+Organize table relations player and rounds |
+Player statistics - Best hand
+Player statistics - Winner for each round
+Unit tests |
+Migrations |
+Database seeder | Y
+Postman collection |
+Docker nginx | Y
+Docker php-fpm | Y
+Docker mysql | Y
