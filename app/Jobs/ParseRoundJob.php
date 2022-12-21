@@ -11,11 +11,15 @@ use Illuminate\Queue\SerializesModels;
 use App\Models\Hand;
 use App\Models\Player;
 use App\Models\Round;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class ParseRoundJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    protected $allHands = ['2D','2C','2S','2H','3D','3C','3S','3H','4D','4C','4S','4H','5D','5C','5S','5H','6D','6C','6S','6H','7D','7C','7S','7H','8D','8C','8S','8H','9D','9C','9S','9H','TD','TC','TS','TH','JD','JC','JS','JH','QD','QC','QS','QH','KD','KC','KS','KH','AD','AC','AS','AH'];
+    
     /**
      * Create a new job instance.
      *
@@ -34,6 +38,9 @@ class ParseRoundJob implements ShouldQueue
     public function handle()
     {
         $cards = explode(" ", $this->line);
+        
+        Validator::make($cards, [Rule::in($this->allHands)])->validate();
+
         $player1_hand = array_slice($cards, 0, 5);
         $player2_hand = array_slice($cards, 5, 5);
 

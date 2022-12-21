@@ -66,7 +66,7 @@ Player manager Create | Y
 Player manager Get | Y
 Player manager Update | Y
 Player manager Delete | Y
-Upload file - Validate |
+Upload file - Validate | Y
 Upload file - Parse into database | Y
 Organize table relations player and rounds | Y
 Player statistics - Best hand
