@@ -19,7 +19,6 @@ class CreateRoundsTable extends Migration
             $table->foreign('hand1_id')->references('id')->on('hands');
             $table->unsignedBigInteger('hand2_id');
             $table->foreign('hand2_id')->references('id')->on('hands');
-            $table->unsignedBigInteger('winner')->nullable();
             $table->timestamps();
         });
     }
