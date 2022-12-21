@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Hand;
 
 class Player extends Model
 {
@@ -12,4 +13,9 @@ class Player extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function hands()
+    {
+        return $this->hasMany(hand::class);
+    }
 }
