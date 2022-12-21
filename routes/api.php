@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PlayerController;
-
+use App\Http\Controllers\GameController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,5 +30,10 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
         Route::get('/{player}', 'show');
         Route::put('/{player}', 'update');
         Route::delete('/{player}', 'destroy');
+    });
+
+    Route::prefix('game')->controller(GameController::class)->group(function() {
+        Route::post('/', 'uploadFile');
+        Route::get('/{player}', 'getPlayerStatistics');
     });
 });
