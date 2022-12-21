@@ -211,6 +211,45 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Upload File",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 3ixew0jR0wdKKq3S6TQnMYe6Uu1cmisU6fFGkbR0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/agentfud/projects/poker-hands/united-remote-poker-hands/poker-hands/hands.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/api/game",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"game"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

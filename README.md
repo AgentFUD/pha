@@ -42,9 +42,14 @@ root@1724f029db3f:/var/www# chmod -R 777 storage/
 bash$ docker exec -it app php /var/www/artisan migrate
 ```
 
-9. Seed two users
+9. Seed two users and two players
 ```
 bash$ docker exec -it app php /var/www/artisan db:seed
+```
+
+10. Run queue:listen and you are ready to go to upload file.txt
+```
+bash$ docker exec -it app php /var/www/artisan queue:listen
 ```
 
 ## Checklist
@@ -62,8 +67,8 @@ Player manager Get | Y
 Player manager Update | Y
 Player manager Delete | Y
 Upload file - Validate |
-Upload file - Parse into database |
-Organize table relations player and rounds |
+Upload file - Parse into database | Y
+Organize table relations player and rounds | Y
 Player statistics - Best hand
 Player statistics - Winner for each round
 Unit tests |
