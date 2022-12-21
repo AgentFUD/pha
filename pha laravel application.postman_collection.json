@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "68584b8b-971f-4acb-93a5-eb1810a44c3f",
+		"name": "pha laravel application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11748565"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"first@domain.com\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/api/login",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get protected route",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer REe810PmHXuOQNS93VXv9LmR13lpXc6OSGqUBjVN",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost/api/user",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Player",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer Uef2035CgicvT2qq1ZLLobkKuAdo7X3eHIjkPKcU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Deleted Player\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/api/player",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"player"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Player",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer Uef2035CgicvT2qq1ZLLobkKuAdo7X3eHIjkPKcU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost/api/player/1",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"player",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Player",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer Uef2035CgicvT2qq1ZLLobkKuAdo7X3eHIjkPKcU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Updated First Player\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/api/player/1",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"player",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Single Player",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer Uef2035CgicvT2qq1ZLLobkKuAdo7X3eHIjkPKcU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost/api/player/3",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"player",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

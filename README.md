@@ -67,9 +67,9 @@ Organize table relations player and rounds |
 Player statistics - Best hand
 Player statistics - Winner for each round
 Unit tests |
-Migrations |
+Migrations | Y
 Database seeder | Y
-Postman collection |
+Postman collection | Y
 Docker nginx | Y
 Docker php-fpm | Y
 Docker mysql | Y

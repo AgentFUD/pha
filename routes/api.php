@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\PlayersController;
+use App\Http\Controllers\PlayerController;
 
 
 /*
@@ -19,13 +19,13 @@ use App\Http\Controllers\PlayersController;
 
 Route::post('login', [LoginController::class, 'login']);
 
-Route::group(['middleware' => 'auth:sanctum'], function(){
+Route::group(['middleware' => 'auth:sanctum'], function() {
     // protected route just for checking if auth works
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
     // player routes
-    Route::prefix('player')->controller(PlayersController::class)->group(function () {
+    Route::prefix('player')->controller(PlayerController::class)->group(function() {
         Route::post('/', 'store');
         Route::get('/{player}', 'show');
         Route::put('/{player}', 'update');

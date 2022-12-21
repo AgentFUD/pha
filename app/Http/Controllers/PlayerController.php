@@ -8,16 +8,6 @@ use Illuminate\Http\Request;
 class PlayerController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -25,7 +15,10 @@ class PlayerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|unique:players',
+        ]);
+        return Player::create($request->all());
     }
 
     /**
@@ -36,7 +29,7 @@ class PlayerController extends Controller
      */
     public function show(Player $player)
     {
-        //
+        return $player;
     }
 
     /**
@@ -48,7 +41,7 @@ class PlayerController extends Controller
      */
     public function update(Request $request, Player $player)
     {
-        //
+        $player->update($request->all());
     }
 
     /**
@@ -59,6 +52,6 @@ class PlayerController extends Controller
      */
     public function destroy(Player $player)
     {
-        //
+        $player->delete();
     }
 }
