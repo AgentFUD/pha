@@ -20,13 +20,15 @@ use App\Http\Controllers\PlayersController;
 Route::post('login', [LoginController::class, 'login']);
 
 Route::group(['middleware' => 'auth:sanctum'], function(){
+    // protected route just for checking if auth works
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
+    // player routes
     Route::prefix('player')->controller(PlayersController::class)->group(function () {
-        Route::get('/{id}', 'show');
         Route::post('/', 'store');
-        Route::put('/{id}', 'update');
-        Route::delete('/{id}', 'destroy');
+        Route::get('/{player}', 'show');
+        Route::put('/{player}', 'update');
+        Route::delete('/{player}', 'destroy');
     });
 });

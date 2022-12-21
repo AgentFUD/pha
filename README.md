@@ -57,10 +57,10 @@ Mysql >= 5.7 | Y
 Git | Y
 API Authentication - Login | Y
 API Authorization - Sanctum | Y
-Player manager Create |
-Player manager Get |
-Player manager Update |
-Player manager Delete |
+Player manager Create | Y
+Player manager Get | Y
+Player manager Update | Y
+Player manager Delete | Y
 Upload file - Validate |
 Upload file - Parse into database |
 Organize table relations player and rounds |
