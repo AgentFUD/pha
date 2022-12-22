@@ -69,9 +69,9 @@ Player manager Delete | Y
 Upload file - Validate | Y
 Upload file - Parse into database | Y
 Organize table relations player and rounds | Y
-Player statistics - Best hand
-Player statistics - Winner for each round
-Unit tests |
+Player statistics - Best hand |
+Player statistics - Winner for each round |
+Unit tests | Y
 Migrations | Y
 Database seeder | Y
 Postman collection | Y
