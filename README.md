@@ -69,6 +69,7 @@ Player manager Delete | Y
 Upload file - Validate | Y
 Upload file - Parse into database | Y
 Organize table relations player and rounds | Y
+Port smaatcoda/poker-rankr to Laravel8/PHP8 | Y
 Implement player statistics - Winner for each round |
 Implement player statistics - Best hand |
 Get player/round statistics endpoint | 
