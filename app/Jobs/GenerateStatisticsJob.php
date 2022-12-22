@@ -8,11 +8,11 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use App\Models\Round;
 use App\Services\PokerRankr\Entities\PokerHand;
 use App\Services\PokerRankr\Entities\PokerCard;
 use App\Services\PokerRankr\Facades\PokerRankr as PokerRankrFacade;
-use App\Services\PokerRankr\PokerRanking;
+use App\Models\Round;
+use App\Models\RoundStatistics;
 
 
 class GenerateStatisticsJob implements ShouldQueue
@@ -92,12 +92,19 @@ class GenerateStatisticsJob implements ShouldQueue
             $hand->add(new PokerCard($rs[0], $rs[1]));
     
             $secondHandRanking = PokerRankrFacade::evaluateHand($hand);
-            print($firstHandRanking->getValue() ."-". $secondHandRanking->getValue()."\n");
+            // print($firstHandRanking->getValue() ."-". $secondHandRanking->getValue()."\n");
             if($firstHandRanking->beats($secondHandRanking)) {
-                print("Winner is 1\n");
+                $winner_id = 1;
             } else {
-                print("Winner is 2\n");
+                $winner_id = 2;
             }
+
+            RoundStatistics::create([
+                'round_id' => $round->id,
+                'first_hand_ranking' => $firstHandRanking->getValue(),
+                'second_hand_ranking' => $secondHandRanking->getValue(),
+                'winner_id' => $winner_id,
+            ]);
         }
     }
 
