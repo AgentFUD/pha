@@ -8,12 +8,6 @@ use App\Jobs\ParseRoundJob;
 
 class GameController extends Controller
 {
-    // Validate all the rows of the file
-    // -- Validate all the hands in a row
-    // -- Validate all the cards in a hand
-    // Upload file
-    // Parse uploaded file
-    // Save parsed items to database by calling a job
     // Trigger generateStatistics job
     // Create a service for Player hand evaluation, straight, three of a kind, etc.
     // Create a service for hand rankings.
