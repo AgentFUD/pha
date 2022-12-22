@@ -30,6 +30,6 @@ class LoginTest extends TestCase
             'Accept' => 'application/json',
         ])->post('/api/login', ['email' => $user->email, 'password' => 'Passw']);
 
-        $response->assertStatus(500);
+        $response->assertStatus(422);
     }
 }
