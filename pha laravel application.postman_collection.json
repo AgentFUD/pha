@@ -224,7 +224,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer 3ixew0jR0wdKKq3S6TQnMYe6Uu1cmisU6fFGkbR0",
+						"value": "Bearer rYhnDDESc0cSPBj95NlnPFUE5Xq3kldurOD5uX2d",
 						"type": "text"
 					}
 				],
@@ -246,6 +246,92 @@
 					"path": [
 						"api",
 						"game"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Trigger calculateStatistics",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer vH1jJBDBXdrpMJlchCorc69RcWKhmaAgluoh2vFb",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/agentfud/projects/poker-hands/united-remote-poker-hands/poker-hands/hands.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/api/game/calculate-statistics",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"game",
+						"calculate-statistics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Statistics",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer vH1jJBDBXdrpMJlchCorc69RcWKhmaAgluoh2vFb",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/agentfud/projects/poker-hands/united-remote-poker-hands/poker-hands/hands.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/api/game/get-statistics",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"game",
+						"get-statistics"
 					]
 				}
 			},
