@@ -34,6 +34,7 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
 
     Route::prefix('game')->controller(GameController::class)->group(function() {
         Route::post('/', 'uploadFile');
-        Route::get('/{player}', 'getPlayerStatistics');
+        Route::get('/calculate-statistics', 'calculateStatistics');
+        Route::get('/get-statistics', 'getStatistics');
     });
 });

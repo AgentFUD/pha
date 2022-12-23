@@ -92,7 +92,7 @@ class GenerateStatisticsJob implements ShouldQueue
             $hand->add(new PokerCard($rs[0], $rs[1]));
     
             $secondHandRanking = PokerRankrFacade::evaluateHand($hand);
-            // print($firstHandRanking->getValue() ."-". $secondHandRanking->getValue()."\n");
+            
             if($firstHandRanking->beats($secondHandRanking)) {
                 $winner_id = 1;
             } else {

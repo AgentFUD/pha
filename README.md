@@ -26,31 +26,35 @@ bash$ docker exec -it app php /usr/bin/composer install
 bash$ docker exec -it app php /var/www/artisan key:generate   
 ```
 
-6. Now you can run tests as well
-```
-bash$ docker exec -it app php /var/www/artisan test   
-```
-
-7. Fix some permission issues
+6. Fix some permission issues
 ```
 bash$ docker exec -it app bash
 root@1724f029db3f:/var/www# chmod -R 777 storage/
 ```
 
-8. Migrate
+7. Migrate
 ```
 bash$ docker exec -it app php /var/www/artisan migrate
 ```
 
-9. Seed two users and two players
+8. Seed two users and two players
 ```
 bash$ docker exec -it app php /var/www/artisan db:seed
+```
+9. Now you can run tests as well
+```
+bash$ docker exec -it app php /var/www/artisan test   
 ```
 
 10. Run queue:listen and you are ready to go to upload file.txt
 ```
 bash$ docker exec -it app php /var/www/artisan queue:listen
 ```
+
+11. Trigger calculateStatistics job by calling /api/game/calculate-statistics
+
+12. Get the generated statistics by calling /api/game/get-player-statistics
+
 
 ## Checklist
 TODO | DONE
@@ -72,8 +76,7 @@ Organize table relations player and rounds | Y
 Port smaatcoda/poker-rankr to Laravel8/PHP8 | Y
 Implement player statistics calculation | Y
 Implement player statistics - Winner for each round | Y
-Implement player statistics - Best hand |
-Get player/round statistics endpoint | 
+Implement player statistics - Best hand | Y
 Unit tests | Y
 Migrations | Y
 Database seeder | Y
